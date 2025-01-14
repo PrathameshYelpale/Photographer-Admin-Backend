@@ -1,0 +1,100 @@
+{
+    "Packages": [
+        {
+            "type": "Photo Shoot",
+            "detailsOfPackage": [
+                {
+                    "type": "Silver",
+                    "details": [
+                        {
+                            "description": "Leather Cover Album",
+                            "price": 15000
+                        },
+                        {
+                            "description": "Leather Cover Album with Minibook & Calender",
+                            "price": 17000
+                        }
+                    ]
+                },
+                {
+                    "type": "Gold",
+                    "details": [
+                        {
+                            "description": "Leather Cover Album with Suitcase",
+                            "price": 20000
+                        },
+                        {
+                            "description": "Leather Cover Album with Suitcase, Minibook & Calender",
+                            "price": 25000
+                        }
+                    ]
+                }
+            ],
+            "id": "a498"
+        },
+        {
+            "type": "Photo & Video Shoot",
+            "detailsOfPackage": [
+                {
+                    "type": "Silver",
+                    "details": [
+                        {
+                            "description": "Leather Cover Album",
+                            "price": 25000
+                        },
+                        {
+                            "description": "Leather Cover Album with Minibook & Calender",
+                            "price": 30000
+                        }
+                    ]
+                },
+                {
+                    "type": "Gold",
+                    "details": [
+                        {
+                            "description": "Leather Cover Album with Suitcase",
+                            "price": 30000
+                        },
+                        {
+                            "description": "Leather Cover Album with Suitcase, Minibook & Calender",
+                            "price": 35000
+                        }
+                    ]
+                }
+            ],
+            "id": "a1a7"
+        },
+        {
+            "type": "Photo, Video & Drone Shoot",
+            "detailsOfPackage": [
+                {
+                    "type": "Silver",
+                    "details": [
+                        {
+                            "description": "Leather Cover Album",
+                            "price": 35000
+                        },
+                        {
+                            "description": "Leather Cover Album with Minibook & Calender",
+                            "price": 40000
+                        }
+                    ]
+                },
+                {
+                    "type": "Gold",
+                    "details": [
+                        {
+                            "description": "Leather Cover Album with Suitcase",
+                            "price": 40000
+                        },
+                        {
+                            "description": "Leather Cover Album with Suitcase, Minibook & Calender",
+                            "price": 45000
+                        }
+                    ]
+                }
+            ],
+            "id": "3e61"
+        }
+    ]
+}
