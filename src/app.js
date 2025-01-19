@@ -3,16 +3,21 @@ require('dotenv/config');
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser")
 const connectDB = require('./controllers/database');
-
+const cors = require("cors")
 
 
 
 // Server Initialization
 const app = express();
 
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(bodyParser.json());
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+}))
 // const PORT = process.env.PORT;
 const PORT = 5500;
 

@@ -42,6 +42,8 @@ authRoute.post("/signup", async (req, res) => {
     });
 
     const savedUser = await user.save();
+    const token = await savedUser.getJWT();
+    res.cookie("token", token)
     res.json({ message: "user added successfully", data: savedUser });
   } catch (error) {
     console.error(error);
@@ -66,7 +68,8 @@ authRoute.post("/login", async(req, res)=>{
 
             res.cookie("token", token)
 
-            res.send("Login Successfully !!!")
+            // res.send("Login Successfully !!!")
+            res.send(userLogin)
           }else{
             throw new Error("Password is not correct");
           }
