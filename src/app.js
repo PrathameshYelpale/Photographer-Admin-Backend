@@ -1,20 +1,28 @@
 const express = require('express');
 require('dotenv/config');
 const bodyParser = require('body-parser');
-
+const cookieParser = require("cookie-parser")
 const connectDB = require('./controllers/database');
-const myRoute = require('./routes/routes');
+
+
+
 
 // Server Initialization
 const app = express();
-app.use(bodyParser.json());
-const PORT = process.env.PORT;
 
-// Middlewares
-app.use(express.json());
+app.use(express.json())
+app.use(cookieParser())
+app.use(bodyParser.json());
+// const PORT = process.env.PORT;
+const PORT = 5500;
+
+const authRouter = require("./routes/routes")
+
+
 
 // Routes will be written here
-app.use('/route', myRoute); 
+app.use('/', authRouter); 
+
 
 // Server Listen Along with Database 
 // connection(in case of data persistence)
@@ -22,7 +30,8 @@ app.use('/route', myRoute);
 connectDB()
 .then(()=> {
     console.log("Database connection established");
-    app.listen(5500, (error) =>{
+    app.listen(PORT, (error) =>{
+        console.log('PORT: ', PORT);
         if(!error)
             console.log("Server is Successfully Running, and App is listening on port "+ PORT)
         else 
@@ -32,5 +41,4 @@ connectDB()
 })
 .catch((err) => {
     console.log("Database cannot connect");
-    
 })
