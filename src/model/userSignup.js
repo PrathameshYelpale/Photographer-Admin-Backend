@@ -18,7 +18,7 @@ const userSignUpSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate(value) {
-      if (!["male", "female", "others"].includes(value)) {
+      if (!["Male", "Female", "Other"].includes(value)) {
         throw new Error("Select proper Gender");
       }
     },
