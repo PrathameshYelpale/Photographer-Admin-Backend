@@ -50,7 +50,7 @@ const clientSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-}, {timestamps: true});
+}, { timestamps: true });
 
 const addClient = mongoose.model("ClientDB", clientSchema);
 

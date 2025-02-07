@@ -7,12 +7,12 @@ const userSignUpSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
-    maxLength : 50,
+    maxLength: 50,
   },
   lastName: {
     type: String,
     required: true,
-    maxLength : 50,
+    maxLength: 50,
   },
   gender: {
     type: String,
@@ -32,8 +32,8 @@ const userSignUpSchema = new mongoose.Schema({
     required: true,
     unique: true,
     lowercase: true,
-    trim : true,
-    index : true,
+    trim: true,
+    index: true,
     validate(value) {
       if (!validator.isEmail(value)) {
         throw new Error("Enter correct email ID");
@@ -44,22 +44,22 @@ const userSignUpSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-}, {timestamps: true});
+}, { timestamps: true });
 
-userSignUpSchema.methods.getJWT = async function(){
+userSignUpSchema.methods.getJWT = async function () {
   const user = this;
 
-  const token = await jwt.sign({_id: user._id}, "PHOTO@admin$890");
+  const token = await jwt.sign({ _id: user._id }, "PHOTO@admin$890");
   return token
 }
 
-userSignUpSchema.methods.validatePassword = async function(passwordInputByUser){
-const user  = this;
-const passwordHash = user.password
+userSignUpSchema.methods.validatePassword = async function (passwordInputByUser) {
+  const user = this;
+  const passwordHash = user.password
 
-const isPasswordValid = await bcrypt.compare(passwordInputByUser, passwordHash);
+  const isPasswordValid = await bcrypt.compare(passwordInputByUser, passwordHash);
 
-return isPasswordValid;
+  return isPasswordValid;
 
 }
 
